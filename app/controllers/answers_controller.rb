@@ -9,7 +9,7 @@ class AnswersController < ApplicationController
     @question = Question.find(params[:id])
     @answer = @question.answers.find(params[:id])
     @answer.destroy
-    redirect_to question_path(@question)
+    redirect_to question_path(question)
   end
 
 
