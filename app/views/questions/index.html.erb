@@ -16,6 +16,8 @@
       <td><%= link_to 'Show', question_path(question) %></td>
       <td><%= link_to 'Edit', edit_question_path(question) %></td>
       <td><%= link_to 'Destroy', question_path(question), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= button_to 'Upvote', question_path(question) %></td>
+      <td><%= button_to 'Downvote', question_path(question) %></td>
     </tr>
   <% end %>
 </table>
