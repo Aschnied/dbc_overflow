@@ -1,4 +1,5 @@
 <%= form_for([@question, @question.answers.build]) do |f| %>
+
   <p>
     <%= f.label :answerer %><br>
     <%= f.text_field :answerer %>

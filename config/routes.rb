@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
 
   resources :questions do
-    resources :answers
+    member do
+      put :upvote
+      put :downvote
+      end
+    resources :answers do
+      member do
+        put :upvote
+        put :downvote
+      end
+    end
   end
 
   get 'welcome/index'

@@ -1,11 +1,10 @@
 class QuestionsController < ApplicationController
 
-  # http_basic_authenticate_with name: ""
-
 
   def index
     @questions = Question.all
     @question = Question.new
+
   end
 
   def show
@@ -38,6 +37,20 @@ class QuestionsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def upvote
+    @question = Question.find(params[:id])
+    @question.increment!(:upvote)
+    @question.increment!(:score)
+    redirect_to questions_path
+  end
+
+  def downvote
+    @question = Question.find(params[:id])
+    @question.decrement!(:downvote)
+    @question.decrement!(:score)
+    redirect_to questions_path
   end
 
   def destroy

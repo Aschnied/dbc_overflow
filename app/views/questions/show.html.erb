@@ -2,19 +2,32 @@
   <strong>Title:</strong>
   <%= @question.title %>
 </p>
-
 <p>
   <strong>Text:</strong>
   <%= @question.text %>
 </p>
 
+<%= link_to 'Edit', edit_question_path(@question) %>
+<%= link_to 'Destroy', question_path(@question), method: :delete, data: { confirm: 'Are you sure?' } %>
+
 <h2>Answers</h2>
   <%= render @question.answers %>
 
 
-<h2>Answer this question:</h2>
+<h3>Answer this question:</h3>
 <%= render 'answers/form' %>
 
-<%= link_to 'Back', questions_path %>
-<%= link_to 'Edit', edit_question_path(@question) %>
-<%= link_to 'Delete', question_path(@question), method: :delete, data: { confirm: 'Are you sure?' } %>
+<table>
+  <tr>
+    <th>Upvotes</th>
+    <th>Downvotes</th>
+    <th>Score</th>
+  </tr>
+  <tr>
+    <td><%= @question.upvote %></td>
+    <td><%= @question.downvote %></td>
+    <td><%= @question.score %></td>
+    <td><%= button_to 'Upvote', upvote_question_path(@question), method: :put %></td>
+    <td><%= button_to 'Downvote', downvote_question_path(@question), method: :put %></td>
+   </tr>
+</table>
