@@ -4,6 +4,9 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.all
     @question = Question.new
+    @response = HTTParty.get("https://api.github.com/zen?access_token=#{ENV['GITACCESSTOKEN']}")
+
+    @quoteresponse = @response.body
   end
 
   def show
