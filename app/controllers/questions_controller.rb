@@ -4,7 +4,6 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.all
     @question = Question.new
-
   end
 
   def show
@@ -43,14 +42,18 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @question.increment!(:upvote)
     @question.increment!(:score)
-    redirect_to questions_path
+    # redirect_to questions_path
+    render json: @question
+    @question.save
   end
 
   def downvote
     @question = Question.find(params[:id])
     @question.decrement!(:downvote)
     @question.decrement!(:score)
-    redirect_to questions_path
+    # redirect_to questions_path
+    render json: @question #not quite sure WHY this helps
+    @question.save #not quite sure if this helps
   end
 
   def destroy
