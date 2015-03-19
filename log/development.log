@@ -20242,3 +20242,1279 @@ Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1
 
 
 Started GET "/assets/application-05bc3a3de81f548b544de0fd4b041937.js?body=1" for ::1 at 2015-03-19 11:02:06 -0700
+
+
+Started PUT "/questions/2/upvote" for ::1 at 2015-03-19 11:11:49 -0700
+Processing by QuestionsController#upvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "questions" SET "upvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["upvote", 67], ["updated_at", "2015-03-19 18:11:49.153135"], ["id", 2]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["score", 28], ["updated_at", "2015-03-19 18:11:49.157382"], ["id", 2]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 200 OK in 78ms (Views: 0.5ms | ActiveRecord: 4.9ms)
+
+
+Started PUT "/questions/2/upvote" for ::1 at 2015-03-19 11:11:49 -0700
+Processing by QuestionsController#upvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "questions" SET "upvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["upvote", 68], ["updated_at", "2015-03-19 18:11:50.000242"], ["id", 2]]
+  [1m[35m (1.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["score", 29], ["updated_at", "2015-03-19 18:11:50.004427"], ["id", 2]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 3.5ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:11:50 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["downvote", -42], ["updated_at", "2015-03-19 18:11:50.612948"], ["id", 2]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["score", 28], ["updated_at", "2015-03-19 18:11:50.618436"], ["id", 2]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Completed 200 OK in 14ms (Views: 0.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/questions" for ::1 at 2015-03-19 11:27:38 -0700
+Processing by QuestionsController#index as HTML
+Completed 500 Internal Server Error in 12ms
+
+NameError (uninitialized constant QuestionsController::HTTParty):
+  app/controllers/questions_controller.rb:7:in `index'
+
+
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.1ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (23.2ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (109.5ms)
+
+
+Started GET "/questions" for ::1 at 2015-03-19 11:28:03 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.6ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/_form.html.erb (67.1ms)
+  Rendered questions/index.html.erb within layouts/application (77.2ms)
+Completed 200 OK in 657ms (Views: 274.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/answers-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:28:04 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-19 11:28:04 -0700
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:28:04 -0700
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-19 11:28:04 -0700
+
+
+Started GET "/assets/welcome-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:28:04 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-19 11:28:04 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-19 11:28:04 -0700
+
+
+Started GET "/assets/answers-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:28:04 -0700
+
+
+Started GET "/assets/app-4722365b792977009328117f0b307807.js?body=1" for ::1 at 2015-03-19 11:28:04 -0700
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:28:04 -0700
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:28:04 -0700
+
+
+Started GET "/assets/application-05bc3a3de81f548b544de0fd4b041937.js?body=1" for ::1 at 2015-03-19 11:28:04 -0700
+
+
+Started GET "/questions" for ::1 at 2015-03-19 11:28:36 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/_form.html.erb (1.7ms)
+  Rendered questions/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 473ms (Views: 120.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answers-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:28:37 -0700
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:28:37 -0700
+
+
+Started GET "/assets/welcome-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:28:37 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-19 11:28:37 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-19 11:28:37 -0700
+
+
+Started GET "/assets/answers-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:28:37 -0700
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-19 11:28:37 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-19 11:28:37 -0700
+
+
+Started GET "/assets/app-4722365b792977009328117f0b307807.js?body=1" for ::1 at 2015-03-19 11:28:37 -0700
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:28:37 -0700
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:28:37 -0700
+
+
+Started GET "/assets/application-05bc3a3de81f548b544de0fd4b041937.js?body=1" for ::1 at 2015-03-19 11:28:37 -0700
+
+
+Started GET "/questions" for ::1 at 2015-03-19 11:28:45 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/_form.html.erb (1.8ms)
+  Rendered questions/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 483ms (Views: 127.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-19 11:28:46 -0700
+
+
+Started GET "/assets/welcome-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:28:46 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-19 11:28:46 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-19 11:28:46 -0700
+
+
+Started GET "/assets/answers-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:28:46 -0700
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:28:46 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-19 11:28:46 -0700
+
+
+Started GET "/assets/answers-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:28:46 -0700
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:28:46 -0700
+
+
+Started GET "/assets/app-4722365b792977009328117f0b307807.js?body=1" for ::1 at 2015-03-19 11:28:46 -0700
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:28:46 -0700
+
+
+Started GET "/assets/application-05bc3a3de81f548b544de0fd4b041937.js?body=1" for ::1 at 2015-03-19 11:28:46 -0700
+
+
+Started GET "/questions" for ::1 at 2015-03-19 11:28:56 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/_form.html.erb (1.9ms)
+  Rendered questions/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 475ms (Views: 128.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answers-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:28:56 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-19 11:28:56 -0700
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:28:56 -0700
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-19 11:28:56 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-19 11:28:56 -0700
+
+
+Started GET "/assets/welcome-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:28:56 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-19 11:28:56 -0700
+
+
+Started GET "/assets/answers-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:28:56 -0700
+
+
+Started GET "/assets/app-4722365b792977009328117f0b307807.js?body=1" for ::1 at 2015-03-19 11:28:56 -0700
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:28:56 -0700
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:28:56 -0700
+
+
+Started GET "/assets/application-05bc3a3de81f548b544de0fd4b041937.js?body=1" for ::1 at 2015-03-19 11:28:56 -0700
+
+
+Started GET "/questions" for ::1 at 2015-03-19 11:29:32 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/_form.html.erb (2.2ms)
+  Rendered questions/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 547ms (Views: 129.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/answers-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:29:33 -0700
+
+
+Started GET "/assets/welcome-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:29:33 -0700
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-19 11:29:33 -0700
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:29:33 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-19 11:29:33 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-19 11:29:33 -0700
+
+
+Started GET "/assets/answers-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:29:33 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-19 11:29:33 -0700
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:29:33 -0700
+
+
+Started GET "/assets/app-4722365b792977009328117f0b307807.js?body=1" for ::1 at 2015-03-19 11:29:33 -0700
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:29:33 -0700
+
+
+Started GET "/assets/application-05bc3a3de81f548b544de0fd4b041937.js?body=1" for ::1 at 2015-03-19 11:29:33 -0700
+
+
+Started GET "/questions" for ::1 at 2015-03-19 11:30:04 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/_form.html.erb (1.9ms)
+  Rendered questions/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 565ms (Views: 128.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/answers-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:30:04 -0700
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:30:04 -0700
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-19 11:30:04 -0700
+
+
+Started GET "/assets/welcome-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:30:04 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-19 11:30:04 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-19 11:30:04 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-19 11:30:04 -0700
+
+
+Started GET "/assets/answers-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:30:04 -0700
+
+
+Started GET "/assets/app-4722365b792977009328117f0b307807.js?body=1" for ::1 at 2015-03-19 11:30:04 -0700
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:30:04 -0700
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:30:04 -0700
+
+
+Started GET "/assets/application-05bc3a3de81f548b544de0fd4b041937.js?body=1" for ::1 at 2015-03-19 11:30:04 -0700
+
+
+Started GET "/questions" for ::1 at 2015-03-19 11:30:14 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/_form.html.erb (1.8ms)
+  Rendered questions/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 527ms (Views: 141.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answers-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:30:15 -0700
+
+
+Started GET "/assets/welcome-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:30:15 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-19 11:30:15 -0700
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:30:15 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-19 11:30:15 -0700
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-19 11:30:15 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-19 11:30:15 -0700
+
+
+Started GET "/assets/answers-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:30:15 -0700
+
+
+Started GET "/assets/app-4722365b792977009328117f0b307807.js?body=1" for ::1 at 2015-03-19 11:30:15 -0700
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:30:15 -0700
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:30:15 -0700
+
+
+Started GET "/assets/application-05bc3a3de81f548b544de0fd4b041937.js?body=1" for ::1 at 2015-03-19 11:30:15 -0700
+
+
+Started GET "/questions" for ::1 at 2015-03-19 11:43:01 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/_form.html.erb (2.0ms)
+  Rendered questions/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 543ms (Views: 126.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/answers-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:43:02 -0700
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:43:02 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-19 11:43:02 -0700
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-19 11:43:02 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-19 11:43:02 -0700
+
+
+Started GET "/assets/welcome-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:43:02 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-19 11:43:02 -0700
+
+
+Started GET "/assets/answers-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:43:02 -0700
+
+
+Started GET "/assets/app-4722365b792977009328117f0b307807.js?body=1" for ::1 at 2015-03-19 11:43:02 -0700
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:43:02 -0700
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:43:02 -0700
+
+
+Started GET "/assets/application-05bc3a3de81f548b544de0fd4b041937.js?body=1" for ::1 at 2015-03-19 11:43:02 -0700
+
+
+Started GET "/questions" for ::1 at 2015-03-19 11:43:07 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.6ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/_form.html.erb (1.9ms)
+  Rendered questions/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 538ms (Views: 127.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/answers-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:43:08 -0700
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:43:08 -0700
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-19 11:43:08 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-19 11:43:08 -0700
+
+
+Started GET "/assets/welcome-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:43:08 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-19 11:43:08 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-19 11:43:08 -0700
+
+
+Started GET "/assets/answers-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:43:08 -0700
+
+
+Started GET "/assets/app-4722365b792977009328117f0b307807.js?body=1" for ::1 at 2015-03-19 11:43:08 -0700
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:43:08 -0700
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:43:08 -0700
+
+
+Started GET "/assets/application-05bc3a3de81f548b544de0fd4b041937.js?body=1" for ::1 at 2015-03-19 11:43:08 -0700
+
+
+Started GET "/questions" for ::1 at 2015-03-19 11:43:10 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/_form.html.erb (1.7ms)
+  Rendered questions/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 494ms (Views: 127.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answers-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:43:11 -0700
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-19 11:43:11 -0700
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:43:11 -0700
+
+
+Started GET "/assets/welcome-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:43:11 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-19 11:43:11 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-19 11:43:11 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-19 11:43:11 -0700
+
+
+Started GET "/assets/answers-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:43:11 -0700
+
+
+Started GET "/assets/app-4722365b792977009328117f0b307807.js?body=1" for ::1 at 2015-03-19 11:43:11 -0700
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:43:11 -0700
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:43:11 -0700
+
+
+Started GET "/assets/application-05bc3a3de81f548b544de0fd4b041937.js?body=1" for ::1 at 2015-03-19 11:43:11 -0700
+
+
+Started GET "/questions" for ::1 at 2015-03-19 11:46:51 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/_form.html.erb (2.1ms)
+  Rendered questions/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 491ms (Views: 120.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:46:52 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-19 11:46:52 -0700
+
+
+Started GET "/assets/answers-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:46:52 -0700
+
+
+Started GET "/assets/welcome-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:46:52 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-19 11:46:52 -0700
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-19 11:46:52 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-19 11:46:52 -0700
+
+
+Started GET "/assets/answers-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:46:52 -0700
+
+
+Started GET "/assets/app-4722365b792977009328117f0b307807.js?body=1" for ::1 at 2015-03-19 11:46:52 -0700
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:46:52 -0700
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:46:52 -0700
+
+
+Started GET "/assets/application-05bc3a3de81f548b544de0fd4b041937.js?body=1" for ::1 at 2015-03-19 11:46:52 -0700
+
+
+Started GET "/questions" for ::1 at 2015-03-19 11:49:50 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QuestionsController#index as HTML
+Completed 500 Internal Server Error in 35048ms
+
+SocketError (getaddrinfo: nodename nor servname provided, or not known):
+  app/controllers/questions_controller.rb:7:in `index'
+
+
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.5ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.3ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (22.2ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (52.3ms)
+
+
+Started GET "/" for ::1 at 2015-03-19 11:50:25 -0700
+Processing by QuestionsController#index as HTML
+Completed 500 Internal Server Error in 23ms
+
+SocketError (getaddrinfo: nodename nor servname provided, or not known):
+  app/controllers/questions_controller.rb:7:in `index'
+
+
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.3ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (17.7ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/andrewschnieder/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (38.8ms)
+
+
+Started GET "/" for ::1 at 2015-03-19 11:51:14 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.6ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/_form.html.erb (15.8ms)
+  Rendered questions/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 953ms (Views: 237.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/answers-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:51:15 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-19 11:51:15 -0700
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-19 11:51:15 -0700
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:51:15 -0700
+
+
+Started GET "/assets/welcome-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:51:15 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-19 11:51:15 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-19 11:51:15 -0700
+
+
+Started GET "/assets/answers-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:51:15 -0700
+
+
+Started GET "/assets/app-4722365b792977009328117f0b307807.js?body=1" for ::1 at 2015-03-19 11:51:15 -0700
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:51:15 -0700
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:51:15 -0700
+
+
+Started GET "/assets/application-05bc3a3de81f548b544de0fd4b041937.js?body=1" for ::1 at 2015-03-19 11:51:15 -0700
+
+
+Started GET "/" for ::1 at 2015-03-19 11:51:20 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/_form.html.erb (2.1ms)
+  Rendered questions/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 2551ms (Views: 122.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:51:23 -0700
+
+
+Started GET "/assets/answers-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:51:23 -0700
+
+
+Started GET "/assets/welcome-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:51:23 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-19 11:51:23 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-19 11:51:23 -0700
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-19 11:51:23 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-19 11:51:23 -0700
+
+
+Started GET "/assets/answers-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:51:23 -0700
+
+
+Started GET "/assets/app-4722365b792977009328117f0b307807.js?body=1" for ::1 at 2015-03-19 11:51:23 -0700
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:51:23 -0700
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:51:23 -0700
+
+
+Started GET "/assets/application-05bc3a3de81f548b544de0fd4b041937.js?body=1" for ::1 at 2015-03-19 11:51:23 -0700
+
+
+Started GET "/" for ::1 at 2015-03-19 11:51:25 -0700
+Processing by QuestionsController#index as HTML
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"
+  Rendered questions/_form.html.erb (2.3ms)
+  Rendered questions/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 516ms (Views: 124.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/answers-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:51:26 -0700
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:51:26 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-19 11:51:26 -0700
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-19 11:51:26 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-19 11:51:26 -0700
+
+
+Started GET "/assets/welcome-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:51:26 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-19 11:51:26 -0700
+
+
+Started GET "/assets/answers-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:51:26 -0700
+
+
+Started GET "/assets/app-4722365b792977009328117f0b307807.js?body=1" for ::1 at 2015-03-19 11:51:26 -0700
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:51:26 -0700
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:51:26 -0700
+
+
+Started GET "/assets/application-05bc3a3de81f548b544de0fd4b041937.js?body=1" for ::1 at 2015-03-19 11:51:26 -0700
+
+
+Started PUT "/questions/2/upvote" for ::1 at 2015-03-19 11:51:48 -0700
+Processing by QuestionsController#upvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "questions" SET "upvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["upvote", 69], ["updated_at", "2015-03-19 18:51:48.923165"], ["id", 2]]
+  [1m[35m (6.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["score", 29], ["updated_at", "2015-03-19 18:51:48.932604"], ["id", 2]]
+  [1m[36m (5.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 35ms (Views: 0.6ms | ActiveRecord: 13.5ms)
+
+
+Started PUT "/questions/2/upvote" for ::1 at 2015-03-19 11:51:52 -0700
+Processing by QuestionsController#upvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "questions" SET "upvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["upvote", 70], ["updated_at", "2015-03-19 18:51:52.296029"], ["id", 2]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["score", 30], ["updated_at", "2015-03-19 18:51:52.299083"], ["id", 2]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 2.3ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:53 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["downvote", -43], ["updated_at", "2015-03-19 18:51:53.475283"], ["id", 2]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["score", 29], ["updated_at", "2015-03-19 18:51:53.479886"], ["id", 2]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 3.9ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:53 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["downvote", -44], ["updated_at", "2015-03-19 18:51:53.995735"], ["id", 2]]
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["score", 28], ["updated_at", "2015-03-19 18:51:53.999467"], ["id", 2]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 200 OK in 10ms (Views: 0.6ms | ActiveRecord: 3.4ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:54 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["downvote", -45], ["updated_at", "2015-03-19 18:51:54.277249"], ["id", 2]]
+  [1m[35m (1.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["score", 27], ["updated_at", "2015-03-19 18:51:54.281634"], ["id", 2]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 3.5ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:54 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["downvote", -46], ["updated_at", "2015-03-19 18:51:54.591898"], ["id", 2]]
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["score", 26], ["updated_at", "2015-03-19 18:51:54.596374"], ["id", 2]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 3.5ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:54 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["downvote", -47], ["updated_at", "2015-03-19 18:51:54.734377"], ["id", 2]]
+  [1m[35m (1.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["score", 25], ["updated_at", "2015-03-19 18:51:54.737890"], ["id", 2]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 3.2ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:54 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["downvote", -48], ["updated_at", "2015-03-19 18:51:54.886569"], ["id", 2]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["score", 24], ["updated_at", "2015-03-19 18:51:54.890224"], ["id", 2]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 3.4ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:55 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["downvote", -49], ["updated_at", "2015-03-19 18:51:55.041184"], ["id", 2]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["score", 23], ["updated_at", "2015-03-19 18:51:55.045866"], ["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 3.3ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:55 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["downvote", -50], ["updated_at", "2015-03-19 18:51:55.178009"], ["id", 2]]
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["score", 22], ["updated_at", "2015-03-19 18:51:55.182155"], ["id", 2]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 3.1ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:55 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["downvote", -51], ["updated_at", "2015-03-19 18:51:55.329146"], ["id", 2]]
+  [1m[35m (1.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["score", 21], ["updated_at", "2015-03-19 18:51:55.333082"], ["id", 2]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 3.2ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:55 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["downvote", -52], ["updated_at", "2015-03-19 18:51:55.483659"], ["id", 2]]
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["score", 20], ["updated_at", "2015-03-19 18:51:55.487549"], ["id", 2]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 3.3ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:55 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["downvote", -53], ["updated_at", "2015-03-19 18:51:55.635568"], ["id", 2]]
+  [1m[35m (1.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["score", 19], ["updated_at", "2015-03-19 18:51:55.639633"], ["id", 2]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 10ms (Views: 0.5ms | ActiveRecord: 3.3ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:55 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["downvote", -54], ["updated_at", "2015-03-19 18:51:55.764058"], ["id", 2]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["score", 18], ["updated_at", "2015-03-19 18:51:55.768136"], ["id", 2]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 3.5ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:55 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["downvote", -55], ["updated_at", "2015-03-19 18:51:55.915658"], ["id", 2]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["score", 17], ["updated_at", "2015-03-19 18:51:55.919445"], ["id", 2]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 3.3ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:56 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["downvote", -56], ["updated_at", "2015-03-19 18:51:56.069813"], ["id", 2]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["score", 16], ["updated_at", "2015-03-19 18:51:56.073973"], ["id", 2]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 3.4ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:56 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["downvote", -57], ["updated_at", "2015-03-19 18:51:56.221520"], ["id", 2]]
+  [1m[35m (2.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["score", 15], ["updated_at", "2015-03-19 18:51:56.226018"], ["id", 2]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 3.6ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:56 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["downvote", -58], ["updated_at", "2015-03-19 18:51:56.356657"], ["id", 2]]
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["score", 14], ["updated_at", "2015-03-19 18:51:56.360643"], ["id", 2]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 3.5ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:56 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["downvote", -59], ["updated_at", "2015-03-19 18:51:56.552705"], ["id", 2]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["score", 13], ["updated_at", "2015-03-19 18:51:56.556832"], ["id", 2]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 3.2ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:56 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["downvote", -60], ["updated_at", "2015-03-19 18:51:56.646317"], ["id", 2]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["score", 12], ["updated_at", "2015-03-19 18:51:56.648741"], ["id", 2]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 2.0ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:56 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["downvote", -61], ["updated_at", "2015-03-19 18:51:56.799003"], ["id", 2]]
+  [1m[35m (1.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["score", 11], ["updated_at", "2015-03-19 18:51:56.802934"], ["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 3.1ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:56 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["downvote", -62], ["updated_at", "2015-03-19 18:51:56.960918"], ["id", 2]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["score", 10], ["updated_at", "2015-03-19 18:51:56.964720"], ["id", 2]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 3.2ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:57 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["downvote", -63], ["updated_at", "2015-03-19 18:51:57.410829"], ["id", 2]]
+  [1m[35m (1.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["score", 9], ["updated_at", "2015-03-19 18:51:57.414808"], ["id", 2]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 3.5ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:57 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["downvote", -64], ["updated_at", "2015-03-19 18:51:57.563682"], ["id", 2]]
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["score", 8], ["updated_at", "2015-03-19 18:51:57.567514"], ["id", 2]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 200 OK in 10ms (Views: 0.5ms | ActiveRecord: 3.4ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:57 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["downvote", -65], ["updated_at", "2015-03-19 18:51:57.706261"], ["id", 2]]
+  [1m[35m (1.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["score", 7], ["updated_at", "2015-03-19 18:51:57.710041"], ["id", 2]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 3.1ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:57 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["downvote", -66], ["updated_at", "2015-03-19 18:51:57.869105"], ["id", 2]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["score", 6], ["updated_at", "2015-03-19 18:51:57.873560"], ["id", 2]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 3.3ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:58 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["downvote", -67], ["updated_at", "2015-03-19 18:51:58.020939"], ["id", 2]]
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["score", 5], ["updated_at", "2015-03-19 18:51:58.025356"], ["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 3.4ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:58 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["downvote", -68], ["updated_at", "2015-03-19 18:51:58.163043"], ["id", 2]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["score", 4], ["updated_at", "2015-03-19 18:51:58.166942"], ["id", 2]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 3.4ms)
+
+
+Started PUT "/questions/2/downvote" for ::1 at 2015-03-19 11:51:58 -0700
+Processing by QuestionsController#downvote as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "questions" SET "downvote" = $1, "updated_at" = $2 WHERE "questions"."id" = $3[0m  [["downvote", -69], ["updated_at", "2015-03-19 18:51:58.293545"], ["id", 2]]
+  [1m[35m (1.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "questions" SET "score" = $1, "updated_at" = $2 WHERE "questions"."id" = $3  [["score", 3], ["updated_at", "2015-03-19 18:51:58.297403"], ["id", 2]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/questions" for ::1 at 2015-03-19 11:52:24 -0700
+Processing by QuestionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yuZEOwIR788qjsD6P2nnCfbDuHPpq/vPJ8pDIhy/T+buScBdV7fdhEMQ8OWM8CJd92toFFR73/Zw1NsmAmMQCw==", "question"=>{"title"=>"What is ajax?", "text"=>"I'm told I need to use ajax for my app but i worry that an abrasive cleaner will destroy my laptop"}, "commit"=>"Create Question"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "questions" ("title", "text", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "What is ajax?"], ["text", "I'm told I need to use ajax for my app but i worry that an abrasive cleaner will destroy my laptop"], ["created_at", "2015-03-19 18:52:24.934869"], ["updated_at", "2015-03-19 18:52:24.934869"]]
+  [1m[35m (6.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions/3
+Completed 302 Found in 13ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/questions/3" for ::1 at 2015-03-19 11:52:24 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 3]]
+  Rendered collection (0.0ms)
+  Rendered answers/_form.html.erb (16.0ms)
+  Rendered questions/show.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 160ms (Views: 156.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/answers-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:52:25 -0700
+
+
+Started GET "/assets/welcome-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:52:25 -0700
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:52:25 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-19 11:52:25 -0700
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-19 11:52:25 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-19 11:52:25 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-19 11:52:25 -0700
+
+
+Started GET "/assets/answers-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:52:25 -0700
+
+
+Started GET "/assets/app-4722365b792977009328117f0b307807.js?body=1" for ::1 at 2015-03-19 11:52:25 -0700
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:52:25 -0700
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:52:25 -0700
+
+
+Started GET "/assets/application-05bc3a3de81f548b544de0fd4b041937.js?body=1" for ::1 at 2015-03-19 11:52:25 -0700
+
+
+Started GET "/questions/3" for ::1 at 2015-03-19 11:54:00 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mAnswer Load (0.4ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 3]]
+  Rendered collection (0.0ms)
+  Rendered answers/_form.html.erb (3.7ms)
+  Rendered questions/show.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 134ms (Views: 131.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/answers-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:54:00 -0700
+
+
+Started GET "/assets/questions-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:54:00 -0700
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-19 11:54:00 -0700
+
+
+Started GET "/assets/welcome-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-19 11:54:00 -0700
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-19 11:54:00 -0700
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-03-19 11:54:00 -0700
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-19 11:54:00 -0700
+
+
+Started GET "/assets/answers-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:54:00 -0700
+
+
+Started GET "/assets/app-4722365b792977009328117f0b307807.js?body=1" for ::1 at 2015-03-19 11:54:00 -0700
+
+
+Started GET "/assets/questions-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:54:00 -0700
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-19 11:54:00 -0700
+
+
+Started GET "/assets/application-05bc3a3de81f548b544de0fd4b041937.js?body=1" for ::1 at 2015-03-19 11:54:00 -0700
+
+
+Started GET "/questions" for ::1 at 2015-03-19 11:54:01 -0700
+Processing by QuestionsController#index as HTML
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/_form.html.erb (2.2ms)
+  Rendered questions/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 574ms (Views: 123.0ms | ActiveRecord: 0.4ms)
