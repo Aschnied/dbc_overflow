@@ -17,7 +17,7 @@
   </tr>
  
   <% @questions.reverse.each do |question| %>
-    <tr>
+    <tr class="<%= question.id %>">
       <td><%= question.title %></td>
       <td><%= question.text %></td>
       <td class="up"><%= question.upvote %></td>
